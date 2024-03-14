@@ -1,4 +1,5 @@
 import { faker } from "@faker-js/faker";
+import { storeWeatherData } from "../helpers/helper.js";
 
 export const generateLondonWeatherData = (): WeatherData => {
   // Generate random weather data
@@ -8,6 +9,8 @@ export const generateLondonWeatherData = (): WeatherData => {
     wind: faker.number.int({ min: 2, max: 78 }),
     rain: faker.number.int({ min: 65, max: 75 }),
   };
+
+  storeweatherData(generatedWeatherData).catch(console.error);
 
   // Return weather data
   return generatedWeatherData;
@@ -21,6 +24,8 @@ export const generateDublinWeatherData = (): WeatherData => {
     wind: faker.number.int({ min: 2, max: 78 }),
     rain: faker.number.int({ min: 65, max: 75 }),
   };
+
+  storeWeatherData(generatedWeatherData).catch(console.error);
 
   // Return weather data
   return generatedWeatherData;
